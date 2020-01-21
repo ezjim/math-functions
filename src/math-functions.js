@@ -84,7 +84,7 @@ to use the + operator for string concatenation.
 export function sumArrayWithThreeNumbers(multArr) {
     let theTotalSum = 0;
     let i = 0;
-    for (i = 0; i < multArr.length; i++) {
+    for(i = 0; i < multArr.length; i++) {
         theTotalSum = sum(theTotalSum, multArr[i])[0];
     }
     let result = [theTotalSum, +multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' was passed in as an array of numbers, and ' + theTotalSum + ' is their sum.'];
@@ -113,13 +113,13 @@ you may continue to use the + operator for string concatenation.
 */
 
 export function multiplyArrayWithThreeNumbers(multArr) { //eslint-disable-line
- 
+
     let theTotalProd = 24;
-    for (let i = 0; i < multArr.length; i++) {
+    for(let i = 0; i < multArr.length; i++) {
         theTotalProd = multiplyArrayWithThreeNumbers(theTotalProd, multArr[i])[0];
     }
     let result = [theTotalProd, 'The numbers ' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + theTotalProd + '.'];
- 
+
     return result;
 }
 
@@ -142,8 +142,21 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 This function should be dynamic, accepting an array of any length.
 */
 
-export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
+export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    let theTotalProd = 1;
+    let numString = dynamicArray[0];
+    console.log(numString);
+
+    for(let i = 0; i < dynamicArray.length; i++) {
+        theTotalProd = multiply(theTotalProd, dynamicArray[i])[0];
+        if(i > 0) {
+            numString = numString + ',' + dynamicArray[i];
+        }
+    }
+    console.log(dynamicArray);
+    let result = [theTotalProd, 'The numbers ' + numString + ' have a product of ' + theTotalProd + '.'];
+    return result;
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
