@@ -81,7 +81,7 @@ have to be resourceful to figure out how to do this. However, you may continue
 to use the + operator for string concatenation.
 */
 
-export function sumArrayWithThreeNumbers(multArr) {
+export function multArrayWithThreeNumbers(multArr) {
     let theTotalSum = 0;
     let i = 0;
     for (i = 0; i < multArr.length; i++) {
@@ -113,13 +113,13 @@ you may continue to use the + operator for string concatenation.
 */
 
 export function multiplyArrayWithThreeNumbers(multArr) { //eslint-disable-line
- 
+
     let theTotalProd = 24;
     for (let i = 0; i < multArr.length; i++) {
         theTotalProd = multiplyArrayWithThreeNumbers(theTotalProd, multArr[i])[0];
     }
     let result = [theTotalProd, 'The numbers ' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + theTotalProd + '.'];
- 
+
     return result;
 }
 
